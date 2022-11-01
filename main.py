@@ -86,6 +86,7 @@ def enter_pressed(event):
     words_label.pack()
     global user_entry
     user_entry = Entry(width=95)
+    user_entry.focus()
     user_entry.pack()
     global check_button
     check_button = Button(text='Check')
@@ -104,12 +105,13 @@ def yes_clicked():
     yes.forget()
     no.forget()
     global ready_label
-    ready_label = Label(text="Press Enter when you are ready to start your typing test\n\n****IMPORTANT****\nMake sure the button is highlighted. Press tab to highlight then press enter.\nDo the same before you type and when you are checking your speed.\n", font=("Comic Sans MS", 11, "bold"))
+    ready_label = Label(text="Press Enter when you are ready to start your typing test\n\n****IMPORTANT****\nWhen you are done typing to save time, press tab, then press enter to check your words\n", font=("Comic Sans MS", 11, "bold"))
     ready_label.config(fg=BLUE, bg=YELLOW)
     ready_label.pack()
     global enter_button
     enter_button = Button(text='Enter')
     enter_button.bind("<Return>", enter_pressed)
+    enter_button.focus()
     enter_button.pack()
 
 
